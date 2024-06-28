@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jobsearch.JobDetailFragment
+import com.example.jobsearch.JobSearch.JobSearchFragment
 import com.example.jobsearch.MVVM.JobViewModel
 import com.example.jobsearch.MainActivity
 import com.example.jobsearch.R
@@ -44,9 +46,23 @@ class SavedJobFragment : Fragment(), Delete_Job_ClickListener {
       jobViewModel.deleteJob(job)
     }
 
+    override fun onDetailJobClick(url: String) {
+        val fragment = JobDetailFragment()
+        val bundle = Bundle()
+        bundle.putString("key",url)
+        fragment.arguments = bundle
+        parentFragmentManager.beginTransaction().replace(R.id.frag_cont,
+            fragment
+        ).commit()
+        Log.d("u1u",url)
+    }
+
 }
 
 interface Delete_Job_ClickListener
 {
     fun onDeleteJobClick(job: Job)
+    fun onDetailJobClick(url: String)
+
 }
+

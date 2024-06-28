@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources><style name="BottomNavigationTextAppearance" parent="@android:style/TextAppearance">
+    <item name="android:textSize">18sp</item> <!-- Adjust the text size as needed -->
+    <item name="android:textColor">#FCFCFC</item> <!-- Use the desired text color -->
+
+    <item name="android:textColorHint">#FCFCFC</item> <!-- Adjust hint text color if needed -->
+    <item name="android:textColorHighlight">#FCFCFC</item> <!-- Adjust highlight text color if needed -->
+    <item name="android:textColorLink">#FCFCFC</item> <!-- Adjust link text color if needed -->
+</style>
+</resources>

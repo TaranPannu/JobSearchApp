@@ -18,16 +18,18 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="5dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/round_border"
         android:elevation="8dp"
+        app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/item_list"
-        app:itemTextAppearanceInactive="@style/ShapeAppearance.Material3.Tooltip"
         />
 
 

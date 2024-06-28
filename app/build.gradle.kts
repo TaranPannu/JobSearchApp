@@ -65,4 +65,9 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1")
     androidTestImplementation("androidx.test:rules:1.5.0")
     testImplementation("org.robolectric:robolectric:4.10.3")
+
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+
 }

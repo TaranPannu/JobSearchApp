@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    tools:context=".SavedJob.SavedJobFragment">
+    tools:context=".JobDetailFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <!-- unique ID of WebView -->
+    <WebView
+        android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/rcv_saved_jobs"/>
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 
 </FrameLayout>
