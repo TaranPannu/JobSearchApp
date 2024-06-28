@@ -2,22 +2,18 @@ package com.example.jobsearch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewmodel.viewModelFactory
-import androidx.recyclerview.widget.RecyclerView
+import com.example.jobsearch.JobSearch.JobSearchFragment
 import com.example.jobsearch.MVVM.JobViewModel
 import com.example.jobsearch.MVVM.JobViewModelFactory
 import com.example.jobsearch.MVVM.Repo
 import com.example.jobsearch.Retrofit.ApiDataClass.JobDataClass
 import com.example.jobsearch.Retrofit.RetrofitBuilder
 import com.example.jobsearch.Room.JobDataBase
+import com.example.jobsearch.SavedJob.SavedJobFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,10 +49,14 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId)
             {
                 R.id.JobSearchFragment ->{Toast.makeText(this,"JobSearchFragment",Toast.LENGTH_LONG).show()
-                    supportFragmentManager.beginTransaction().replace(R.id.frag_cont,JobSearchFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.frag_cont,
+                        JobSearchFragment()
+                    ).commit()
                 }
                 R.id.SavedJobsFragment ->{Toast.makeText(this,"SavedJobsFragment",Toast.LENGTH_LONG).show()
-                    supportFragmentManager.beginTransaction().replace(R.id.frag_cont,SavedJobFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.frag_cont,
+                        SavedJobFragment()
+                    ).commit()
                 }
             }
             true
@@ -74,4 +74,7 @@ class MainActivity : AppCompatActivity() {
         jobViewModelFactory = JobViewModelFactory(repo)
         jobViewModel = ViewModelProvider(this, jobViewModelFactory).get(JobViewModel::class.java)
     }
+
+
 }
+

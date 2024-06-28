@@ -3,6 +3,7 @@ package com.example.jobsearch.MVVM
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.jobsearch.Retrofit.ApiDataClass.Job
 import com.example.jobsearch.Retrofit.ApiDataClass.JobDataClass
 import com.example.jobsearch.Room.Dao
 import kotlinx.coroutines.Dispatchers
@@ -24,6 +25,19 @@ class JobViewModel(private val repo: Repo):ViewModel() {
          }
        }
 
+    fun insertJob(job: Job)
+    {
+     viewModelScope.launch(Dispatchers.IO) {
+         repo.insert(job)
+     }
+    }
+
+    fun deleteJob(job: Job)
+    {
+        viewModelScope.launch(Dispatchers.IO) {
+            repo.delete(job)
+        }
+    }
     fun getAllSavedJobs() = repo.getAllSavedJobs()
 
 
