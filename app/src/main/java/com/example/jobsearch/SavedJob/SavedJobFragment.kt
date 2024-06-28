@@ -54,7 +54,7 @@ class SavedJobFragment : Fragment(), Delete_Job_ClickListener {
         parentFragmentManager.beginTransaction().replace(R.id.frag_cont,
             fragment
         ).commit()
-        Log.d("u1u",url)
+
     }
 
 }

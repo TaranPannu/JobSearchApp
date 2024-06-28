@@ -30,30 +30,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
-//        jobViewModel.ApiLiveData.observe(this@MainActivity)
-//        {
-//            Log.d("s232",it.toString())
-//        }
-//        val retro_services = RetrofitBuilder.getApiInstance()
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            try {
-//
-//            }
-//            catch(e: Exception)
-//            {
-//                Log.d("s22",e.toString())
-//            }
-//        }
+
+        supportFragmentManager.beginTransaction().replace(R.id.frag_cont,
+            JobSearchFragment()
+        ).commit()
 
         Bottom_Nav.setOnNavigationItemSelectedListener {
             when(it.itemId)
             {
-                R.id.JobSearchFragment ->{Toast.makeText(this,"JobSearchFragment",Toast.LENGTH_LONG).show()
+                R.id.JobSearchFragment ->{
                     supportFragmentManager.beginTransaction().replace(R.id.frag_cont,
                         JobSearchFragment()
                     ).commit()
                 }
-                R.id.SavedJobsFragment ->{Toast.makeText(this,"SavedJobsFragment",Toast.LENGTH_LONG).show()
+                R.id.SavedJobsFragment ->{
                     supportFragmentManager.beginTransaction().replace(R.id.frag_cont,
                         SavedJobFragment()
                     ).commit()

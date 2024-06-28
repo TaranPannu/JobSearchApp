@@ -48,6 +48,11 @@ val job_type:TextView = itemView.findViewById(R.id.job_type)
                  .into(holder.company_logo)
          }
 
+         holder.Job_Title.setOnClickListener()
+         {
+             listener_saved_jobs.onDetailJobClick(item.url)
+         }
+
      }
 
      override fun getItemCount(): Int {

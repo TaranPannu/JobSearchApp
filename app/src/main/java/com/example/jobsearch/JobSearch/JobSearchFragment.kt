@@ -1,6 +1,7 @@
 package com.example.jobsearch.JobSearch
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jobsearch.JobDetailFragment
 import com.example.jobsearch.MVVM.JobViewModel
 import com.example.jobsearch.MainActivity
 import com.example.jobsearch.R
@@ -45,11 +47,22 @@ class JobSearchFragment : Fragment(), Save_Job_ClickListener {
     override fun onSaveJobClick(job: Job) {
         jobViewModel.insertJob( assignDefaultValues(job))
         Toast.makeText(context,"Saved Successfully",Toast.LENGTH_SHORT).show()    }
+
+    override fun onDetailJobClick(url: String) {
+        val fragment = JobDetailFragment()
+        val bundle = Bundle()
+        bundle.putString("key",url)
+        fragment.arguments = bundle
+        parentFragmentManager.beginTransaction().replace(R.id.frag_cont,
+            fragment
+        ).commit()
+  }
 }
 
 interface Save_Job_ClickListener
 {
     fun onSaveJobClick(job: Job)
+    fun onDetailJobClick(url: String)
 }
 
 
