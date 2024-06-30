@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             JobSearchFragment()
         ).commit()
 
-        Bottom_Nav.setOnNavigationItemSelectedListener {
+        Bottom_Nav.setOnItemSelectedListener {
             when(it.itemId)
             {
                 R.id.JobSearchFragment ->{

@@ -53,6 +53,8 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-viewmodel-android:2.8.1")
     implementation("androidx.lifecycle:lifecycle-livedata:2.8.2")
     implementation("com.google.android.material:material:1.2.0")
+    implementation("androidx.compose.material:material:1.6.8")
+
 
     val room_version = "2.4.3"
 

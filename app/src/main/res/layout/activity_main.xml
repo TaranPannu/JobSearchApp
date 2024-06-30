@@ -28,12 +28,14 @@
         android:background="@drawable/gradient_color"
         android:elevation="8dp"
         app:itemTextColor="@color/white"
-        app:itemTextAppearanceActiveBoldEnabled="true"
-        app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/item_list"
         />
+
+<!--    app:itemTextAppearanceActiveBoldEnabled="true"-->
+<!--    app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
